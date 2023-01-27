@@ -22,16 +22,21 @@ unsigned int getbits(int x, int pos, int n );
 void setbits(int x, int pos, int n, int y );
 void invertbits(int x, int pos, int n);
 unsigned int rightrot(int x, int n );
-
+int bitcount_one(int x);
+int bitcount_zero(int x);
 int main()
 {  
-    int y, y1;
+    int y, y1,y2,y3;
     y=getbits(31, 4,3 );
     printf("%d\n", y);
     setbits(31, 4, 3, y );
      invertbits(-1,1,1 );
     y1= rightrot(31,2);
      printf("%d\n", y1);
+    y2= bitcount_one(7);
+    printf("no. of ones=%d\n", y2);
+     y3= bitcount_zero(17);
+     printf("no. of zeros=%d\n", y3);
     return 0;
 }
 
@@ -75,3 +80,27 @@ unsigned int rightrot(int x, int n )
     return (x>>n); 
 }
 
+
+int bitcount_one(int x)
+{
+    int b;
+    for(b=0;x!=0;x>>=1)
+    {
+        if(x&01)
+          b++;
+    }
+    return b;
+}
+
+
+
+int bitcount_zero(int x)
+{
+    int b,y=0;
+    for(b=0;x!=1;x>>=1)
+    {
+        if(!(x&1))
+           b++;
+    }
+    return b;
+}
