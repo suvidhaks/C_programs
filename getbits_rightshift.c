@@ -19,13 +19,19 @@
 
 #include <stdio.h>
 unsigned int getbits(int x, int pos, int n );
+void setbits(int x, int pos, int n, int y );
+void invertbits(int x, int pos, int n);
+unsigned int rightrot(int x, int n );
 
 int main()
 {  
-    int y;
+    int y, y1;
     y=getbits(31, 4,3 );
-    printf("%d", y);
-
+    printf("%d\n", y);
+    setbits(31, 4, 3, y );
+     invertbits(-1,1,1 );
+    y1= rightrot(31,2);
+     printf("%d\n", y1);
     return 0;
 }
 
@@ -33,3 +39,39 @@ unsigned int getbits(int x, int pos, int n )
 {
     return (x>>pos+1-n) & ~(~0<<n);
 }
+
+
+// solution for exercise 2.6 is defined in the function setbits(x,p,n,y);
+
+
+void setbits(int x, int pos, int n, int y )
+{
+    x=x>>pos+1-n;
+   
+    if(x==y)
+     printf("x returns same n bit value as y\n");
+     
+    return ; 
+}
+
+
+// solution for exercise 2.7 is defined in the function invertbits(x,p,n);
+
+void invertbits(int x, int pos, int n )
+{  int y;
+    x=~(x>>pos+1-n);
+     printf("x value=%d\n", x);
+     y=~(x);
+      printf("x value=%d\n", y);
+     
+    return ; 
+}
+
+// solution for exercise 2.7 is defined in the function invertbits(x,p,n);
+
+unsigned int rightrot(int x, int n )
+{  
+     
+    return (x>>n); 
+}
+
