@@ -3,7 +3,7 @@ double atofl(char[]); in function the line
  power=power*10;   // this line keeps count for the number of digits after decimal point  
  we keep track of power coz the entire decimal part is converted to integer part and it is 
  stored in val; so to restore it back to decimal we divide the integer part with power.
-
+//note if there is no return type mention to the function, compiler assumes the default return type to be int.
 */
 
 #include <stdio.h>
@@ -21,7 +21,7 @@ int main()
     
    while(line(s,LIMIT)>0)
    {
-       sum+=atofl(s);
+       sum+=atofl(s); // in this expression, atof is a function which is used directly; so compiler must know the return type of the function, therfore the declaration to this func is very imp
    }
     
     // printf("\n%d", len);
