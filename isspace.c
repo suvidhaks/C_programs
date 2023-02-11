@@ -23,7 +23,7 @@ int getop(char a[], int siz)
    // int i=0;
     while((a[0]=c=getchar())==' ' || c=='\t'); // this statement means that the condition is true but it becomes false when enter is pressed
     a[1]='\0';
-    if(!isdigit(c))
+    if(!isdigit(c)) // ! is used to make the condition true so that if the first entered char is not anumber the function can return a value;
       return c;
     
 }
