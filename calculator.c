@@ -1,3 +1,23 @@
+/*
+in this program we are using three arrays 1. char s[] 2. double a[] 3. char buff[];
+int getop(char s[]) // takes the inputs from the user through getch() function
+now since the characters are converted to  long float values give space between each operand
+e.g: input : 1.0 2.0 +
+space is given between the operands when operator is encountered the arithmetic operation on operands is performed.
+the reason to give space is a signal is given to the function getop that reading into the first operand is over;
+when space is encountered the getop() fun is executed if the entered char is  ' ' the function returns int value of ' ' ascii;
+in push(atofl((s)));
+atofl returns double
+double atofl(char s[]);
+everytime getop(char s[]) is called the base address of s is passed;
+
+note: this program works only for binary operands
+the inputs must be given in float values only
+*/
+
+
+
+
 #include <stdio.h>
 #include<ctype.h>
 #define MAX 100
@@ -30,11 +50,11 @@ while((type=getop(s))!=EOF)
         case NUMBER: 
                      
                       val1=atofl(s);
-                     push(atofl(s));
+                     push(atofl(s));  // atofl() is passed as an argument since the return type of atofl is double; and push accepts the arg double
                      
                       break;
 
-         case '+': push(pop() + pop());  
+         case '+': push(pop() + pop());  //pop returns double;
                    // printf("\nlf=%lf", a[dp]);    
                     break;
 
@@ -66,7 +86,7 @@ while((type=getop(s))!=EOF)
 }
 
 
-double atofl(char s[])
+double atofl(char s[])  // in this function only base address of s is passed everytime the function is called;
 {
     
     int  sign;
@@ -99,7 +119,7 @@ int getop(char s[])
     int i;
     int c;
     
-    while((s[0]=c=getch())==' ' || c=='\t');
+    while((s[0]=c=getch())==' ' || c=='\t');  //  the significance of this while loop is if you encounter space it; the function returns the value
     s[1]='\0';
     if(!isdigit(c) && c!='.')
     {
@@ -126,7 +146,7 @@ int getop(char s[])
 
 int getch()
 {
-   return (bufp>0) ? (buff[--bufp]) : getchar(); 
+   return (bufp>0) ? (buff[--bufp]) : getchar(); // in this function if we encounter characters like \n  we push it to the char buff[];
 }
 
 
