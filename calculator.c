@@ -11,8 +11,9 @@ atofl returns double
 double atofl(char s[]);
 everytime getop(char s[]) is called the base address of s is passed;
 
-note: this program works only for binary operands
-the inputs must be given in float values only
+note: i/p: 
+ 1.0 2.0 - 4.0 5.0 + * (infix expression)
+ o/p : 9.0000
 */
 
 
