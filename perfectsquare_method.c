@@ -1,7 +1,7 @@
 /*
 this program checks if a given number is perfect square or not;
 if it is perfect square; the square root of that perfect square will be displayed;
-function to find squareroot of a perfect square usingprime factorization has been implemented;
+function to find squareroot of a perfect square using prime factorization has been implemented;
 
 */
 
