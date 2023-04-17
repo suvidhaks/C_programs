@@ -19,7 +19,7 @@ int main()
     printf("\nenter column of B");
     scanf("%d", &bcol);
     read(a, b, ro,cl,bcol);
-    initialize(c,  ro, bcol);
+    initialize(c,  ro, bcol); //not required for square matrices multiplication;
     square_matrixmul(a, b, c, ro, cl, bcol);
     display(a,b,ro,cl,bcol);
     return 0;
