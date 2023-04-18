@@ -105,13 +105,13 @@ void square_matrixmul(int a[row][col], int b[row][col], int c[row][col], int ro,
 {
     
      int i,j,k;
-     for(i=0;i<ro;i++)
+     for(i=0;i<ro;i++)    // ro -> row
      {
-         for(j=0;j<cl;j++)
+         for(j=0;j<cl;j++)  // cl -> column for A matrix and row for B matrix
          {   c[i][j]=0;
-             for(k=0;k<bcol;k++)
+             for(k=0;k<bcol;k++)   // bcol -> colfor B matrix
              {
-               c[i][j]+=a[i][k]*b[k][j];   
+               c[i][j]+=a[i][k]*b[k][j];  // multiplication of matrices is 1->row X 1 -> column; i iskept constant and k columns are incremented; j is kept constant k is incremented 
              }
          }
      }
