@@ -1,0 +1,81 @@
+#include <stdio.h>
+
+int main() {
+    int a=10;
+    int *p;
+    p=&a;
+    printf("%p %p %d", p, &p, *p);
+
+    return 0;
+}
+
+
+#include <stdio.h>
+
+int main() {
+    int a=10;
+    int *p;
+    p=&a;
+    int y=1;
+    y=*p+10;
+    (*p)++;
+    printf("%p %p ", p, &p);
+    printf("\n");
+       printf("%d %d %d", a, y, *p);
+    return 0;
+}
+
+
+
+
+
+// pointers as arguments to functions
+#include <stdio.h>
+void swap (int *a, int *b);
+int main() {
+    int a=10,b=20;
+    swap(&a,&b);
+    printf("%d %d", a, b);
+    return 0;
+}
+
+void swap (int *a, int *b)
+{
+    int temp;
+    temp=*a;
+    *a=*b;
+    *b=temp;
+   // printf("%d %d", a, b);
+    //printf("\n");
+}
+
+
+
+// character pointer returns the length of the string literal
+
+#include <stdio.h>
+int strlenth(char *p);
+int main() {
+    // Write C code here
+    int n;
+    char s[]="suvidha nitk macs";
+    n=strlenth(s);
+  printf("%d", n);
+    return 0;
+}
+
+int strlenth(char *p)
+{
+    int n= 0;
+    for( p; *p!='\0'; p++)
+    {
+        n++;
+    }
+    return n;
+}
+
+
+
+
+
+
