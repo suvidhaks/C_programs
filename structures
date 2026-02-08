@@ -1,0 +1,75 @@
+Structures
+
+	#include <stdio.h>
+
+struct student
+{
+    int rollno;
+    char name[20];
+    float marks;
+};
+
+
+int main()
+{
+    struct student s1={20,"suvidha",85.5};
+     struct student s2={2,"suvidha",85.25};
+  
+  printf("\n%d\t%s\t%f",s1.rollno,s1.name,s1.marks);
+    printf("\n%d\t%s\t%f",s2.rollno,s2.name,s2.marks);
+   return 0;
+}
+
+#include <stdio.h>
+
+struct student
+{
+    int rollno;
+    char name[20];
+    float marks;
+}s1,s2;
+
+
+int main()
+{
+    struct student s1,s2;
+    printf("enter student1 details");
+    printf("\nenter rollno");
+    scanf("%d",&s1.rollno);
+    printf("enter name");
+    scanf("%s",s1.name);
+    printf("enter marks");
+    scanf("%f",&s1.marks);
+    printf("\n%d\t,%s\t,%f",s1.rollno,s1.name,s1.marks);
+   return 0;
+}
+
+Array of structures
+
+#include <stdio.h>
+
+struct student
+{
+    int rollno;
+    char name[20];
+    float marks;
+}s1[3];
+
+
+int main()
+{
+    struct student s1[3];
+    int i;
+    for(i=0;i<3;i++)
+    {
+        printf("enter details");
+        scanf("%d%s%f",&s1[i].rollno,&s1[i].name,&s1[i].marks);
+    }
+    
+     for(i=0;i<3;i++)
+    {
+        printf("\n%d\t%s\t%.2f",s1[i].rollno,s1[i].name,s1[i].marks);
+    }
+    
+   return 0;
+}
