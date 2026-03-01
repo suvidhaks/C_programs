@@ -74,6 +74,22 @@ int strlenth(char *p)
     return n;
 }
 
+//character array as string
+#include <stdio.h>
+
+int main() 
+{
+    // Write C code here
+    int n;
+    char str1[100];
+    char str2[20];
+    scanf("%s %s", str1, str2);
+    printf("%s %s", str1, str2);
+   // n=strlenth(s);
+ // printf("%d", n);
+    return 0;
+}
+
 
 
 
